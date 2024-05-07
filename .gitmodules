@@ -1,0 +1,9 @@
+[submodule "backend-parent"]
+	path = backend-parent
+	url = git@github.com:dzoms/backend-parent.git
+[submodule "security-service"]
+	path = security-service
+	url = git@github.com:dzoms/security-service.git
+[submodule "transfer-contract"]
+	path = transfer-contract
+	url = git@github.com:dzoms/transfer-contract.git
