@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://dzoms_authentication_service_postgres:5433/user_service
+    url: jdbc:postgresql://postgres:5435/postgres
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
@@ -16,6 +16,11 @@ spring:
   web:
     resources:
       add-mappings: false
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8282/realms/master
 
 server:
   port: 8082
