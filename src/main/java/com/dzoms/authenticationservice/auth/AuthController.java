@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/auth")
 public class AuthController {
+/*
+    localhost:8082/api/v1/auth/hello
+    */
 
     @GetMapping("/hello")
     public String hello() {
