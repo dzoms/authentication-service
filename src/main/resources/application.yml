@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://dzoms_authentication_service_postgres:5433/user_service
+    url: jdbc:postgresql://localhost:5435/postgres
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
@@ -16,9 +16,28 @@ spring:
   web:
     resources:
       add-mappings: false
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8282/realms/master
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: backend
+            client-secret: AXJ3KTBDXCDvfxHtuOSfJ8boFsDytH0P
+            scope: openid
+
 
 server:
   port: 8082
+  servlet:
+    session:
+      timeout: 30
   error:
     whitelabel:
       enabled: false
